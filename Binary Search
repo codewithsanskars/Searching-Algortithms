@@ -1,0 +1,44 @@
+def createlist():
+  global l,s
+  l=[]
+  s=int(input("Enter the length of list"))
+  for j in range(0,s):
+    k=int(input("Enter the value"))
+    l.append(k)
+
+
+
+def binarysearch():
+    l.sort()
+    z=0
+    n=int(input("Enter the Value you want to search"))
+    start=0
+    end=s-1
+    while start<=end:
+        mid=int((start+end)/2)
+        if l[mid]==n:
+            z=1
+            x=mid
+            break
+        elif l[mid]<n:
+            start=mid+1
+        else:
+            end=mid-1
+            
+    if z==1:
+        print("Element found at",x)
+    else:
+        print("Value not found")
+    q=int(input("Press 1 to search again, 2 to create a new list or any other number to exit"))
+    if q==1:
+      binarysearch()
+    elif q==2:
+      createlist()
+    else:
+      print("Thankyou!")
+      return
+
+print(" Hello, this particular searching technique works on Linear Search Algorithm. Usage: Locates the position of a given element in a list by checking each element sequentially. Benefits: Simple to understand and implement.Applicable to unsorted data structures.No pre-sorting required.Limitations: Inefficient for large data sets (O(n) time complexity).Not suitable for sorted data.Performance decreases with the size of the data set.")
+createlist()    
+binarysearch()
+    

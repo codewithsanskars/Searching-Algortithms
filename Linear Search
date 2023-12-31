@@ -1,0 +1,37 @@
+def createlist():
+  global l,s
+  l=[]
+  s=int(input("Enter the length of list"))
+  for j in range(0,s):
+    k=int(input("Enter the value"))
+    l.append(k)
+
+
+
+def linearsearch():
+  n=int(input("Enter the Value you want to search"))
+  g=0
+  t=0
+  for i in l:
+      if n==i:
+          g=i
+          t=1
+          h=l.index(g)
+  if t==1:
+    print("found",g," at ",h)
+  else:
+    print("Value not found")
+  q=int(input("Press 1 to search again, 2 to create a new list or any other number to exit"))
+  if q==1:
+    linearsearch()
+  elif q==2:
+    createlist()
+  else:
+      print("Thankyou!")
+      return
+
+
+print(" Hello, this particular searching technique works on Linear Search Algorithm. Usage: Locates the position of a given element in a list by checking each element sequentially. Benefits: Simple to understand and implement.Applicable to unsorted data structures.No pre-sorting required.Limitations: Inefficient for large data sets (O(n) time complexity).Not suitable for sorted data.Performance decreases with the size of the data set.")
+createlist()    
+linearsearch()
+    
